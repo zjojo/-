@@ -23,10 +23,15 @@ print(user)
 similarUser, films = min(data.items(), key=lambda item:(-len(item[1].keys()&user.keys()),
                          sum(((item[1].get(film) - user.get(film))**2
                               for film in user.keys()&item[1].keys()))))
-#lambda函数语法：lambda parameters:express,这里lambda返回一个元组s，一个是用户共同打分的负数，一个是打分差值平方和
-#min函数按照执行key的标准返回，因为data.sitems是返回键值对，所以key对应的是两个值，key按照平均分求最大值，value按照平方和求最小值
 print("koown data".center(50, "="))
 #center函数将打印的字居中显示，然后空白的地方用=代替
+
+#lambda函数语法：lambda parameters:express,这里lambda返回一个元组s，一个是用户共同打分的负数，一个是打分差值平方和
+#min函数设置lambda函数：用法如下
+# 函数形式：max( x ,key=lambda a : b )
+# x可以是任何数值，可以有多个x值
+#这个函数的意思是：我们先把x值带入lambda函数转换成b值，然后再将b值进行比较。
+
 
 for item in data.items():
     print(len(item[1].keys()&user.keys()),
@@ -36,5 +41,5 @@ print('current data'.center(50, '='))
 print(user)
 print('most similar user and his filename'.center(50,'='))
 print(similarUser, films,sep=':')
-print('recommednfile film'.center(50),'=')
+print('recommednfile film'.center(50,'='))
 print(max(films.keys()-user.keys(), key=lambda film:films[film]))
