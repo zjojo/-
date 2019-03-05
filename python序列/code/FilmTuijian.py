@@ -24,7 +24,7 @@ similarUser, films = min(data.items(), key=lambda item:(-len(item[1].keys()&user
                          sum(((item[1].get(film) - user.get(film))**2
                               for film in user.keys()&item[1].keys()))))
 #lambda函数语法：lambda parameters:express,这里lambda返回一个元组s，一个是用户共同打分的负数，一个是打分差值平方和
-#min函数按照执行key的标准返回，因为data.items是返回键值对，所以key对应的是两个值，key按照平均分求最大值，value按照平方和求最小值
+#min函数按照执行key的标准返回，因为data.sitems是返回键值对，所以key对应的是两个值，key按照平均分求最大值，value按照平方和求最小值
 print("koown data".center(50, "="))
 #center函数将打印的字居中显示，然后空白的地方用=代替
 
