@@ -58,3 +58,8 @@ for ran  in (RandomNumbers, RandomNumbers1, RandomNumber2):
         ran(num, begin, end) #这里给函数传参执行
     print(ran.__name__, time.time() -start) #这里查看对应的执行时间
 
+
+#测试效率比较下来，第一个函数的效率比第二个函数效率还高一点，原因在于什么？
+#在RandomNumber2  中判断个数是否够了的时候用的是len函数，而len实际统计长度是通过从左到右开始数列表元素有多少个，然后返回，
+# 所以效率相对较差，比较下来，集合的效率最高
+
