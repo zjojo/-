@@ -1,4 +1,5 @@
 # -*- encoding:utf-8 -*-
+import string
 """
 字符串认识及使用方法
 字符串是不可变序列，其中序列即表示它和列表等一样，可以使用切片，索引的方法获取其中的值，不可变，表示一旦定义之后，不能通过
@@ -11,7 +12,7 @@ print("This is %s，he(she) is %d years old"%(data[0],data[1]))
 
 # 方式二：format   ------官方推荐的方法，因为使用方式灵活
 print("The number {0:,} in hex is{0:#x}, the number {1} in oct is {1:#o}".format(555,55))
-#通过位置指定：其中0表示指定要格式化的值的位置，#o,#x表示格式化的格式
+# 通过位置指定：其中0表示指定要格式化的值的位置，#o,#x表示格式化的格式
 
 print("My name is {name},my age is {age}".format(name="joting",age=24))
 # 通过参数指定值
@@ -49,20 +50,24 @@ for word in words:
 print(text)
 
 
-#复杂映射替换
+# 复杂映射替换
 """创建映射表，adb一一对应转化为：uxw,即a转化为u，b转换为x..."""
 table = "".maketrans('abc', 'uxw')
 s = "Python is a greater programming language,I like it"
 print(s.translate(table))
 # maketrans和translate成对出现使用，可以用来做加密
 # 例子： 凯撒加密
-import string
+
+
 def kaisa(s, k):
-    lower = string.ascii_lowercase  #返回所有的小写字母
+    lower = string.ascii_lowercase  # 返回所有的小写字母
     upper = string.ascii_uppercase   # 返回所有的大写字母
     before = string.ascii_letters  # 返回所有字母a......Z
     after = lower[k:] + lower[:k] + upper[k:] + upper[:k]
     table = "".maketrans(before, after)
     return s.translate(table)
 
-print(kaisa(s, 3))
+
+if __name__ == "__main__":
+    print(kaisa(s, 3))
+
