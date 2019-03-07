@@ -8,7 +8,7 @@ from itertools import cycle
 def crypt(source, key):
     """编写函数实现字符串加密和解密，循环使用指定密钥，采用简单的异或算法"""
     result = ''
-    temp = cycle(key)  #itertool提供用于循环操作迭代对象的函数，返回的是一个迭代器对象，惰性求值，用到的时候才会返回一个值
+    temp = cycle(key)  # itertool提供用于循环操作迭代对象的函数，返回的是一个迭代器对象，惰性求值，用到的时候才会返回一个值
     print(type(temp))
     for ch in source:
         result = result + chr(ord(ch) ^ ord(next(temp)))
