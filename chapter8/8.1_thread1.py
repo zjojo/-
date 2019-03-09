@@ -1,4 +1,5 @@
 # -*- encoding:utf-8 -*-
+"""线程的创建与阻塞，守护进程"""
 import threading
 import time
 
