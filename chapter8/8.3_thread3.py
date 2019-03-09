@@ -1,7 +1,7 @@
 # encoding:utf-8
 
 """
-生产者和消费者例子：Condition对象
+Condition对象实现：生产者和消费者例子：
 """
 
 import threading

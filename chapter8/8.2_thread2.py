@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
 """
-线程同步：获取锁，释放锁，临界区
+lock对象实现：线程同步：获取锁，释放锁，临界区
 """
 
 import threading
